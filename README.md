@@ -34,11 +34,11 @@ The goal is to move from scattered market observations to a disciplined research
 - Paper-trading operations concepts: allocation drift, rebalance review, safeguards, and logs.
 - Documentation and public/private repo separation for protecting proprietary logic.
 
-## Private Implementation
+## Implementation Access
 
-This repository is a public product showcase, not an open-source trading system. It is designed for professional review, recruiting conversations, technical discussions, and potential collaboration or business conversations.
+The full implementation is maintained privately to protect strategy logic, credentials, execution workflows, and account-specific data.
 
-The private implementation includes the full application code, strategy logic, persistence layer, and paper-trading workflow. These details can be discussed selectively upon request while keeping proprietary logic, credentials, and account-specific data protected.
+Architecture decisions, workflow design, and selected implementation details can be discussed selectively upon request.
 
 ## Screenshots
 
