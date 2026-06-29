@@ -1,12 +1,14 @@
-# LK V1 Trade Desk Showcase
+# LK V1 Trade Desk
 
-This is a public, sanitized showcase for **LK V1 Trade Desk**, a private trading research and paper-trading operations project.
+Public showcase for a private trading research and paper-trading operations platform I built to validate market ideas, monitor systematic signals, and review portfolio decisions before execution.
 
-The full implementation is intentionally private. This repository is designed to show the product thinking, workflow design, and system architecture without exposing proprietary strategy logic, credentials, execution code, or private trading data.
+The production implementation remains private because it contains strategy logic, execution workflows, credentials, and account-specific data. This repository is intentionally sanitized for recruiters, interviewers, and technical reviewers: it highlights the product design, workflow architecture, screenshots, and risk controls without exposing proprietary code or private trading data.
+
+I am happy to walk through the private implementation, architecture decisions, and selected code examples during an interview or technical review where appropriate.
 
 ## Product Overview
 
-LK V1 Trade Desk connects three workflows:
+LK V1 Trade Desk connects three trading workflows:
 
 - **Trade Desk**: validates market ideas against local LK V1 signal states, fundamentals, volume, backtest context, AI setup status, and risk checks.
 - **Market Intelligence**: discovers opportunities, runs ticker-level research, generates short/medium/long setup views, and tracks saved setup outcomes.
@@ -16,12 +18,12 @@ The goal is to turn market ideas into structured, reviewable trading workflows r
 
 ## What This Demonstrates
 
-- Systematic trading research workflow design.
-- Market-data validation and multi-timeframe signal monitoring.
-- AI-assisted research with evidence and outcome tracking.
-- Portfolio allocation, risk checks, and paper-trading operations.
-- Trading dashboard UX for decision review, not blind automation.
-- TypeScript/Next.js application design and production-minded safeguards.
+- Designed a multi-module trading dashboard covering idea discovery, signal validation, setup review, and paper-portfolio monitoring.
+- Built workflows for multi-timeframe signal tracking, market-data validation, factor-style scoring, and backtest context review.
+- Developed AI-assisted market research that converts broad market evidence into structured setup snapshots with outcome monitoring.
+- Implemented paper-trading operations concepts including target allocation, allocation drift, Smart Rebalance review, position/order monitoring, and execution logs.
+- Added production-minded safeguards for stale signals, duplicate signals, invalid orders, provider failures, and manual review before execution.
+- Built the application with a private Next.js/TypeScript stack, API integrations, persistence, and dashboard state management.
 
 ## Technical Areas
 
@@ -31,6 +33,17 @@ The goal is to turn market ideas into structured, reviewable trading workflows r
 - AI-assisted research orchestration and structured setup storage.
 - Paper-trading operations concepts: allocation drift, rebalance review, safeguards, and logs.
 - Documentation and public/private repo separation for protecting proprietary logic.
+
+## Review Notes
+
+This repository is meant to be reviewed as a professional project showcase, not as an open-source trading system. It is useful for evaluating:
+
+- Trading product thinking and workflow design.
+- Understanding of systematic research, signal validation, and portfolio review.
+- Engineering judgment around data quality, traceability, and operational safeguards.
+- Ability to turn a trading idea into a structured tool with reviewable outputs.
+
+The private repository contains the full implementation and can be discussed selectively during interviews.
 
 ## Screenshots
 
@@ -90,6 +103,7 @@ This repository includes:
 - Screenshots.
 - Architecture notes.
 - Sanitized workflow examples.
+- Public explanation of design decisions and system boundaries.
 
 This repository does **not** include:
 
@@ -99,6 +113,7 @@ This repository does **not** include:
 - Paper/live trading execution code.
 - Private portfolio state.
 - Private Supabase data.
+- Account-specific paper-trading records.
 
 ## Documentation
 

@@ -1,6 +1,8 @@
 # Public Scope And Privacy
 
-This repository is a sanitized showcase. It is intended for recruiters, interviewers, and technical reviewers who want to understand the project without accessing the private trading system.
+This repository is a sanitized showcase. It is intended for recruiters, interviewers, and technical reviewers who want to understand the project without requiring access to the private trading system.
+
+The private implementation can be discussed selectively during interviews or technical reviews, including architecture decisions, workflow design, and selected code examples where appropriate.
 
 ## Included
 
@@ -9,6 +11,7 @@ This repository is a sanitized showcase. It is intended for recruiters, intervie
 - Architecture notes.
 - Workflow descriptions.
 - High-level safeguards and design decisions.
+- Public-facing explanation of product scope and system boundaries.
 
 ## Excluded
 
@@ -21,7 +24,8 @@ This repository is a sanitized showcase. It is intended for recruiters, intervie
 - Private portfolio state.
 - Private database records.
 - User credentials or access-control configuration.
+- Account-specific paper-trading records.
 
 ## Why This Exists
 
-The full project contains strategy, execution, and research infrastructure that should remain private. This showcase preserves the useful interview signal: product design, trading workflow understanding, systems thinking, and applied engineering.
+The full project contains strategy, execution, and research infrastructure that should remain private. This showcase preserves the useful interview signal: product design, trading workflow understanding, systems thinking, risk awareness, and applied engineering.
