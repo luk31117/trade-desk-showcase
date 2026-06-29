@@ -2,9 +2,9 @@
 
 Public showcase for **LK V1 Trade Desk**, a private trading research and paper-trading operations platform I built to turn market ideas into structured, testable, and reviewable trading decisions. The system connects signal validation, AI-assisted market research, portfolio allocation, paper execution review, and post-trade outcome tracking in one workflow.
 
-The production implementation remains private because it contains strategy logic, execution workflows, credentials, and account-specific data. This repository is intentionally sanitized for recruiters, interviewers, and technical reviewers: it highlights the product design, workflow architecture, screenshots, and risk controls without exposing proprietary code or private trading data.
+The production implementation remains private because it contains strategy logic, execution workflows, credentials, and account-specific data. This repository is intentionally sanitized for professional review: it highlights the product design, workflow architecture, screenshots, and risk controls without exposing proprietary code or private trading data.
 
-I am happy to walk through the private implementation, architecture decisions, and selected code examples during an interview or technical review where appropriate.
+The private implementation, architecture decisions, and selected code examples can be discussed selectively upon request.
 
 ## Product Overview
 
@@ -34,16 +34,11 @@ The goal is to move from scattered market observations to a disciplined research
 - Paper-trading operations concepts: allocation drift, rebalance review, safeguards, and logs.
 - Documentation and public/private repo separation for protecting proprietary logic.
 
-## Review Notes
+## Private Implementation
 
-This repository is meant to be reviewed as a professional project showcase, not as an open-source trading system. It is useful for evaluating:
+This repository is a public product showcase, not an open-source trading system. It is designed for professional review, recruiting conversations, technical discussions, and potential collaboration or business conversations.
 
-- Trading product thinking and workflow design.
-- Understanding of systematic research, signal validation, and portfolio review.
-- Engineering judgment around data quality, traceability, and operational safeguards.
-- Ability to turn a trading idea into a structured tool with reviewable outputs.
-
-The private repository contains the full implementation and can be discussed selectively during interviews.
+The private implementation includes the full application code, strategy logic, persistence layer, and paper-trading workflow. These details can be discussed selectively upon request while keeping proprietary logic, credentials, and account-specific data protected.
 
 ## Screenshots
 
