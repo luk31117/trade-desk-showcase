@@ -1,6 +1,6 @@
 # LK V1 Trade Desk
 
-Public showcase for a private trading research and paper-trading operations platform I built to validate market ideas, monitor systematic signals, and review portfolio decisions before execution.
+Public showcase for **LK V1 Trade Desk**, a private trading research and paper-trading operations platform I built to turn market ideas into structured, testable, and reviewable trading decisions. The system connects signal validation, AI-assisted market research, portfolio allocation, paper execution review, and post-trade outcome tracking in one workflow.
 
 The production implementation remains private because it contains strategy logic, execution workflows, credentials, and account-specific data. This repository is intentionally sanitized for recruiters, interviewers, and technical reviewers: it highlights the product design, workflow architecture, screenshots, and risk controls without exposing proprietary code or private trading data.
 
@@ -14,7 +14,7 @@ LK V1 Trade Desk connects three trading workflows:
 - **Market Intelligence**: discovers opportunities, runs ticker-level research, generates short/medium/long setup views, and tracks saved setup outcomes.
 - **Active Portfolio**: supports paper-trading strategy allocation, target weights, allocation-drift checks, Smart Rebalance, position/order monitoring, and execution logs.
 
-The goal is to turn market ideas into structured, reviewable trading workflows rather than one-off discretionary notes.
+The goal is to move from scattered market observations to a disciplined research-to-review workflow: discover an idea, validate it against local signals and market context, size it in a portfolio view, and track what happened afterward.
 
 ## What This Demonstrates
 
