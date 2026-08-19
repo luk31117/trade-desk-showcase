@@ -2,6 +2,10 @@
 
 LK Intelligence is organized around four product layers: research discovery, event strategy research, local validation, and paper-trading operations.
 
+## Design Thesis
+
+The system treats trading research as an auditable pipeline rather than a collection of notes or alerts. Each idea should have a source, evidence, signal context, risk view, portfolio impact, execution status, and outcome record. This makes the workflow useful beyond a single strategy because the same structure can support discretionary review, systematic research, paper trading, and post-trade learning.
+
 ## 1. Trade Desk
 
 Trade Desk is the local validation layer. It brings together:

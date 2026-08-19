@@ -47,6 +47,16 @@ These examples describe the system behavior without exposing private implementat
 5. Apply paper-trading safeguards before any order action.
 6. Store execution logs and portfolio snapshots for review.
 
+## Operational Workflow Mapping
+
+The private implementation is organized so each trading workflow leaves a review trail:
+
+- **Market-data refresh**: updates the local universe, prices, relative volume, score inputs, and signal context before research or portfolio review.
+- **Signal synchronization**: checks multi-timeframe LK V1 states and stores the current trend, indicator state, flip timing, and backtest context.
+- **Allocation-drift review**: compares target allocation with current paper positions so portfolio review can focus on exceptions rather than manual inspection.
+- **Paper execution review**: tracks order intent, permissions, order state, execution logs, and failures before treating a rebalance as complete.
+- **Outcome monitoring**: checks saved setups against later prices and marks whether the idea is waiting, active, won, lost, expired, or invalidated.
+
 ## Example Safeguards
 
 - Do not act on stale signals.

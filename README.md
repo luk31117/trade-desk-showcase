@@ -6,6 +6,12 @@ The production implementation remains private because it contains strategy logic
 
 The private implementation, architecture decisions, and selected code examples can be discussed selectively upon request.
 
+## Why I Built This
+
+I built LK Intelligence to make trading research more disciplined. Market ideas are easy to generate; the harder part is validating the signal, checking whether the setup is tradable, sizing it responsibly, monitoring what happened, and learning from the outcome.
+
+The platform is designed around that full loop: idea discovery -> evidence review -> setup definition -> portfolio impact -> paper execution review -> post-trade feedback.
+
 ## Product Overview
 
 LK Intelligence connects four core trading workflows:
@@ -16,6 +22,14 @@ LK Intelligence connects four core trading workflows:
 - **Active Portfolio**: supports paper-trading strategy allocation, target weights, allocation-drift checks, Smart Rebalance, position/order monitoring, and execution logs.
 
 The goal is to move from scattered market observations to a disciplined research-to-review workflow: discover an idea, validate it against local signals and market context, size it in a portfolio view, and track what happened afterward.
+
+## What A Reviewer Can Evaluate
+
+- Product judgment: how research, trading review, portfolio monitoring, and post-trade learning fit together.
+- Trading workflow thinking: how signals move from raw market data into ranked opportunities and paper-trading review.
+- Engineering judgment: how the system handles data freshness, failed providers, invalid orders, permissions, and auditability.
+- Quantitative discipline: how backtests, signal scores, drawdowns, profit factor, setup outcomes, and allocation drift are shown as decision context rather than as guarantees.
+- Communication: how complex trading workflows are documented clearly without exposing private strategy code.
 
 ## What This Demonstrates
 
@@ -37,6 +51,15 @@ The goal is to move from scattered market observations to a disciplined research
 - Paper-trading operations concepts: allocation drift, rebalance review, safeguards, and logs.
 - Documentation and public/private repo separation for protecting proprietary logic.
 
+## Implementation Highlights
+
+- Multi-timeframe signal dashboard covering 38 equities and eight configured timeframes.
+- Backtest context surfaced alongside live signal state, including simulated trades, win rate, ROI, drawdown, profit factor, and configuration metadata.
+- Market Intelligence workflows covering 160 tickers and 540 saved setup snapshots in the private system.
+- Scheduled refresh and synchronization logic for market data, signal state, setup status, portfolio state, and review logs.
+- Operational safeguards for stale signals, duplicate signals, invalid orders, provider failures, owner-gated actions, and paper-trading review.
+- Screenshot-first public documentation that explains the workflow while keeping private strategy logic and account data protected.
+
 ## Implementation Access
 
 The full implementation is maintained privately to protect strategy logic, credentials, execution workflows, and account-specific data.
@@ -47,37 +70,55 @@ Architecture decisions, workflow design, and selected implementation details can
 
 ### Trade Desk Overview
 
+Universe-level dashboard for synced tickers, multi-timeframe LK V1 states, fundamentals, volume, technical scores, backtest context, Market Intelligence status, and Suggested Focus review.
+
 ![Trade Desk Overview](docs/screenshots/trade-desk-overview.png)
 
 ### GOOGL Backtest Context
+
+Backtest context shown beside live signal state. The purpose is to support research review while avoiding blind reliance on a single optimized result.
 
 ![GOOGL Backtest Context](docs/screenshots/googl-backtest-context.png)
 
 ### Trade Desk Backtest Context
 
+Tooltip-level view of strategy range, sample size, ROI, drawdown, win rate, profit factor, and configuration source.
+
 ![Trade Desk Backtest Context](docs/screenshots/trade-desk-backtest-tooltip.png)
 
 ### Suggested Focus Ask Me
+
+Natural-language research layer that compares broader market context with local dashboard evidence before forming a practical view.
 
 ![Suggested Focus Ask Me](docs/screenshots/suggested-focus-ask-me.png)
 
 ### Market Intelligence Overview
 
+Research workspace for module-based opportunity discovery, ticker deep dives, decision briefs, watch levels, and setup generation.
+
 ![Market Intelligence Overview](docs/screenshots/market-intelligence-overview.png)
 
 ### Market Movers Scan
+
+AI-assisted market scan that ranks names by public evidence, volume, sentiment, catalyst flow, and tradeability context.
 
 ![Market Movers Scan](docs/screenshots/market-movers.png)
 
 ### Event Strategy Lab
 
+Workspace for converting market catalysts into repeatable strategy ideas, event rules, validation plans, and saved monitors.
+
 ![Event Strategy Lab Overview](docs/screenshots/event-strategy-lab-overview.png)
 
 ### Event Strategy Deep Dive
 
+Detailed strategy view showing thesis, trigger logic, preliminary feasibility, allowed filters, forbidden filters, validation protocol, and robustness checks.
+
 ![Event Strategy Lab Deep Dive](docs/screenshots/event-strategy-lab-deep-dive.png)
 
 ### Sports Probability Lab
+
+Experimental probability workspace for odds, implied probability, modeled probability, edge, watch levels, and outcome review. It is included as a decision-quality lab rather than a core trading module.
 
 ![Sports Probability Watchlist](docs/screenshots/sports-probability-watchlist.png)
 
