@@ -1,88 +1,27 @@
 # LK Intelligence / LK V1 Trade Desk
 
-Public showcase for **LK Intelligence**, a private trading research and paper-trading operations platform I built to turn market ideas into structured, testable, and reviewable decisions. The system connects signal validation, AI-assisted market research, event-driven strategy research, portfolio allocation, paper execution review, and post-trade outcome tracking in one workflow.
+**A private trading research and paper-trading operations platform that turns market ideas into structured, testable, and reviewable decisions.**
 
-The production implementation remains private because it contains strategy logic, execution workflows, credentials, and account-specific data. This repository is intentionally sanitized for professional review: it highlights the product design, workflow architecture, screenshots, and risk controls without exposing proprietary code or private trading data.
+LK Intelligence connects signal validation, AI-assisted market research, event-driven strategy research, portfolio allocation, paper execution review, and post-trade outcome tracking. This public repository is a sanitized showcase of the product, architecture, workflows, screenshots, and risk controls.
 
-The private implementation, architecture decisions, and selected code examples can be discussed selectively upon request.
+The full implementation remains private to protect strategy logic, credentials, execution workflows, and account-specific data. Architecture decisions and selected implementation details can be discussed selectively upon request.
 
-## Why I Built This
+## Start Here
 
-I built LK Intelligence to make trading research more disciplined. Market ideas are easy to generate; the harder part is validating the signal, checking whether the setup is tradable, sizing it responsibly, monitoring what happened, and learning from the outcome.
+- [Architecture](docs/architecture.md): how the modules connect.
+- [Workflow Examples](docs/workflows.md): how research, validation, safeguards, and outcome tracking work.
+- [Signal Review Example](snippets/signal-review-example.md): sanitized example of structured setup review.
+- [Event Strategy Example](snippets/event-strategy-lab-example.md): sanitized prompt thesis and event-rule workflow.
+- [Public Scope](docs/public-scope.md): what is intentionally included and excluded.
 
-The platform is designed around that full loop: idea discovery -> evidence review -> setup definition -> portfolio impact -> paper execution review -> post-trade feedback.
+## Product Snapshot
 
-## Quick Review Path
-
-For a fast review, start here:
-
-1. **Trade Desk Overview**: see how the dashboard ranks a synced equity universe using signal state, score inputs, backtest context, and risk flags.
-2. **GOOGL Backtest Context**: see how historical strategy results are shown beside the current signal instead of being treated as a standalone answer.
-3. **Market Intelligence Overview**: see how broad research modules turn market evidence into decision briefs, watchlists, and setup snapshots.
-4. **Event Strategy Deep Dive**: see how a catalyst is converted into a testable strategy thesis with allowed filters, forbidden filters, validation protocol, and overfit controls.
-5. **Workflow Examples**: see how the private implementation maps research, monitoring, safeguards, and outcome tracking into a repeatable process.
-
-## Product Overview
-
-LK Intelligence connects four related trading workflows:
-
-- **Trade Desk**: validates market ideas against local LK V1 signal states, fundamentals, volume, backtest context, AI setup status, and risk checks.
-- **Market Intelligence**: discovers opportunities, runs ticker-level research, generates short/medium/long setup views, builds decision briefs, tracks saved setup outcomes, and can route qualified ideas into Trade Desk review.
-- **Event Strategy Lab**: separately converts macro, policy, commodity, earnings, weather, and corporate catalysts into repeatable strategy rules, validation plans, and saved monitors.
-- **Active Portfolio**: supports paper-trading strategy allocation, target weights, allocation-drift checks, Smart Rebalance, position/order monitoring, and execution logs.
-
-The goal is to move from scattered market observations to a disciplined research-to-review workflow: discover an idea, validate it against local signals and market context, size it in a portfolio view, and track what happened afterward.
-
-## What A Reviewer Can Evaluate
-
-- Product judgment: how research, trading review, portfolio monitoring, and post-trade learning fit together.
-- Trading workflow thinking: how signals move from raw market data into ranked opportunities and paper-trading review.
-- Engineering judgment: how the system handles data freshness, failed providers, invalid orders, permissions, and auditability.
-- Quantitative discipline: how backtests, signal scores, drawdowns, profit factor, setup outcomes, and allocation drift are shown as decision context rather than as guarantees.
-- Communication: how complex trading workflows are documented clearly without exposing private strategy code.
-
-## Questions The Project Explores
-
-- How should a market idea move from news, price action, or a model signal into a reviewable setup?
-- How do you stop a dashboard from becoming an overfitting machine?
-- What information should be visible before a rebalance or paper order is allowed?
-- How should AI-assisted research be constrained so it produces structured hypotheses instead of loose opinions?
-- How do you create enough traceability to review whether a trading idea actually worked?
-
-## What This Demonstrates
-
-- Designed a multi-module trading dashboard covering idea discovery, signal validation, event strategy research, setup review, and paper-portfolio monitoring.
-- Built workflows for multi-timeframe signal tracking, market-data validation, factor-style scoring, backtest context review, and daily research triage.
-- Developed AI-assisted market research that converts broad market evidence into structured setup snapshots, decision briefs, and outcome monitoring.
-- Added event-driven strategy research for catalyst scanning, rule definition, historical feasibility estimates, validation protocols, and saved trigger monitors.
-- Implemented paper-trading operations concepts including target allocation, allocation drift, Smart Rebalance review, position/order monitoring, and execution logs.
-- Added production-minded safeguards for stale signals, duplicate signals, invalid orders, provider failures, and manual review before execution.
-- Built the application with a private Next.js/TypeScript stack, API integrations, persistence, and dashboard state management.
-
-## Technical Areas
-
-- Frontend product workflow design in Next.js and TypeScript.
-- Market-data and signal-state normalization.
-- Multi-timeframe dashboard state and scoring.
-- AI-assisted research orchestration, structured setup storage, and research journal workflows.
-- Event-driven strategy research with trigger logic, validation plans, failure modes, and monitor definitions.
-- Paper-trading operations concepts: allocation drift, rebalance review, safeguards, and logs.
-- Documentation and public/private repo separation for protecting proprietary logic.
-
-## Implementation Highlights
-
-- Multi-timeframe signal dashboard covering 38 equities and eight configured timeframes.
-- Backtest context surfaced alongside live signal state, including simulated trades, win rate, ROI, drawdown, profit factor, and configuration metadata.
-- Market Intelligence workflows covering 160 tickers and 540 saved setup snapshots in the private system.
-- Scheduled refresh and synchronization logic for market data, signal state, setup status, portfolio state, and review logs.
-- Operational safeguards for stale signals, duplicate signals, invalid orders, provider failures, owner-gated actions, and paper-trading review.
-- Screenshot-first public documentation that explains the workflow while keeping private strategy logic and account data protected.
-
-## Implementation Access
-
-The full implementation is maintained privately to protect strategy logic, credentials, execution workflows, and account-specific data.
-
-Architecture decisions, workflow design, and selected implementation details can be discussed selectively upon request.
+| Module | What It Does | Why It Matters |
+| --- | --- | --- |
+| **Trade Desk** | Validates tickers against LK V1 signal states, fundamentals, volume, backtest context, setup status, and risk checks. | Prevents research ideas from moving toward execution review without local evidence. |
+| **Market Intelligence** | Runs opportunity scans, ticker deep dives, decision briefs, watchlists, setup snapshots, and outcome tracking. | Turns broad market evidence into structured research that can be reviewed later. |
+| **Event Strategy Lab** | Separately converts macro, policy, commodity, earnings, weather, and corporate catalysts into event rules and validation plans. | Turns discretionary catalysts into testable hypotheses instead of one-off opinions. |
+| **Active Portfolio** | Supports target allocation, allocation-drift checks, Smart Rebalance, paper position/order monitoring, and execution logs. | Connects research to portfolio review while keeping execution controlled and auditable. |
 
 ## Screenshots
 
@@ -98,35 +37,11 @@ Backtest context shown beside live signal state. The purpose is to support resea
 
 ![GOOGL Backtest Context](docs/screenshots/googl-backtest-context.png)
 
-### Trade Desk Backtest Context
-
-Tooltip-level view of strategy range, sample size, ROI, drawdown, win rate, profit factor, and configuration source.
-
-![Trade Desk Backtest Context](docs/screenshots/trade-desk-backtest-tooltip.png)
-
-### Suggested Focus Ask Me
-
-Natural-language research layer that compares broader market context with local dashboard evidence before forming a practical view.
-
-![Suggested Focus Ask Me](docs/screenshots/suggested-focus-ask-me.png)
-
 ### Market Intelligence Overview
 
 Research workspace for module-based opportunity discovery, ticker deep dives, decision briefs, watch levels, and setup generation.
 
 ![Market Intelligence Overview](docs/screenshots/market-intelligence-overview.png)
-
-### Market Movers Scan
-
-AI-assisted market scan that ranks names by public evidence, volume, sentiment, catalyst flow, and tradeability context.
-
-![Market Movers Scan](docs/screenshots/market-movers.png)
-
-### Event Strategy Lab
-
-Workspace for converting market catalysts into repeatable strategy ideas, event rules, validation plans, and saved monitors.
-
-![Event Strategy Lab Overview](docs/screenshots/event-strategy-lab-overview.png)
 
 ### Event Strategy Deep Dive
 
@@ -140,7 +55,19 @@ Experimental probability workspace for odds, implied probability, modeled probab
 
 ![Sports Probability Watchlist](docs/screenshots/sports-probability-watchlist.png)
 
-## System Flow
+## What Makes It Interesting
+
+- **Research is forced into structure**: ideas are stored with evidence, setup type, entry/stop/target logic, holding period, status, and later outcome.
+- **Backtests are context, not permission**: historical results are displayed beside live signal quality, drawdown, sample size, and current risk state.
+- **AI is constrained**: prompts push outputs into repeatable hypotheses, allowed filters, forbidden filters, validation steps, and failure modes.
+- **Operations are treated seriously**: stale signals, duplicate signals, invalid orders, provider failures, permissions, and failure logs are part of the workflow.
+- **The project is productized**: it is not a notebook; it is a dashboard with research modules, state management, persistence, review flows, and paper-trading controls.
+
+## Actual Workflow Relationship
+
+Trade Desk and Market Intelligence are connected. Trade Desk can run ticker-level Market Intelligence deep dives with local LK V1 state, score quality, backtest metrics, relative volume, and signal context. Market Intelligence can also route selected names back into Trade Desk through review links.
+
+Event Strategy Lab is separate. It creates catalyst-driven strategy hypotheses and saved monitors that would need later validation in Trade Desk or a dedicated backtest engine before automation.
 
 ```text
 Market data, fundamentals, watchlist inputs
@@ -165,52 +92,34 @@ Active Portfolio allocation, Smart Rebalance, and paper execution logs
 Outcome monitoring for saved setups, portfolio snapshots, and execution review
 ```
 
-## Key Design Principles
+## Implementation Highlights
 
-- **Evidence-gated decisions**: AI-generated or external market ideas must be validated against local signal, score, volume, and risk evidence.
-- **Research before automation**: catalyst ideas, ticker setups, and rebalance proposals are converted into reviewable rules before they can influence execution.
-- **Paper trading first**: execution workflows are designed for paper trading and forward-testing before any live use.
-- **Traceability**: setup snapshots, research journals, execution logs, and outcome monitoring make it possible to review decisions after the fact.
-- **Safety over automation**: stale signals, duplicate signals, allocation breaches, invalid orders, and provider failures are treated as first-class risks.
+- Multi-timeframe signal dashboard covering 38 equities and eight configured timeframes.
+- Backtest context surfaced alongside live signal state, including simulated trades, win rate, ROI, drawdown, profit factor, and configuration metadata.
+- Market Intelligence workflows covering 160 tickers and 540 saved setup snapshots in the private system.
+- Scheduled refresh and synchronization logic for market data, signal state, setup status, portfolio state, and review logs.
+- Operational safeguards for stale signals, duplicate signals, invalid orders, provider failures, owner-gated actions, and paper-trading review.
+- Private Next.js/TypeScript application with API integrations, persistence, dashboard state management, and public/private repo separation.
 
 ## Research Examples
 
 - **GOOGL staged strategy sweep**: one representative GOOGL 2D long-only LK V1 configuration produced 70 simulated trades, 57.1% win rate, 2.99 profit factor, 509.9% ROI, and 20.9% maximum drawdown after 0.1% commission assumptions. This is shown as research/backtest context, not a live performance claim.
-- **Event Strategy Lab**: current-catalyst scans are converted into repeatable event rules, sector/ticker baskets, entry and exit logic, failure modes, validation protocols, and saved strategy monitors.
-- **Trade Tracker**: saved setups are monitored for entry activation, take-profit, stop-loss, expiry, realized return, and ambiguous outcome handling.
+- **Market Intelligence setup tracking**: saved setup snapshots are monitored for entry activation, take-profit, stop-loss, expiry, realized return, and ambiguous outcome handling.
+- **Event Strategy Lab**: current catalysts are converted into repeatable event rules, sector/ticker baskets, entry and exit logic, failure modes, validation protocols, and saved strategy monitors.
 
-## Additional Research Lab
+## Questions The Project Explores
 
-The private system also includes an experimental **Sports Probability** workspace for odds-board scanning, implied probability, edge estimation, fractional-Kelly sizing, parlay review, and outcome journaling. It is treated as a probability and decision-quality lab rather than a core trading module.
+- How should a market idea move from news, price action, or a model signal into a reviewable setup?
+- How do you stop a dashboard from becoming an overfitting machine?
+- What information should be visible before a rebalance or paper order is allowed?
+- How should AI-assisted research be constrained so it produces structured hypotheses instead of loose opinions?
+- How do you create enough traceability to review whether a trading idea actually worked?
 
 ## Public Scope
 
-This repository includes:
+This repository includes product overview, screenshots, architecture notes, sanitized workflow examples, and public explanation of design decisions and system boundaries.
 
-- Product overview.
-- Screenshots.
-- Architecture notes.
-- Sanitized workflow examples.
-- Public explanation of design decisions and system boundaries.
-
-This repository does **not** include:
-
-- Private API keys or environment files.
-- Full LK V1 strategy implementation.
-- Proprietary Pine Script.
-- Paper/live trading execution code.
-- Private portfolio state.
-- Private Supabase data.
-- Account-specific paper-trading records.
-- Private strategy monitors, research journals, and event-study implementation details.
-
-## Documentation
-
-- [Architecture](docs/architecture.md)
-- [Workflow Examples](docs/workflows.md)
-- [Public Scope And Privacy](docs/public-scope.md)
-- [Sanitized Signal Review Example](snippets/signal-review-example.md)
-- [Sanitized Event Strategy Lab Example](snippets/event-strategy-lab-example.md)
+It does **not** include private API keys, environment files, full LK V1 strategy implementation, proprietary Pine Script, paper/live execution code, private portfolio state, private Supabase data, account-specific records, or private strategy monitors.
 
 ## Disclaimer
 
