@@ -12,6 +12,16 @@ I built LK Intelligence to make trading research more disciplined. Market ideas 
 
 The platform is designed around that full loop: idea discovery -> evidence review -> setup definition -> portfolio impact -> paper execution review -> post-trade feedback.
 
+## Quick Review Path
+
+For a fast review, start here:
+
+1. **Trade Desk Overview**: see how the dashboard ranks a synced equity universe using signal state, score inputs, backtest context, and risk flags.
+2. **GOOGL Backtest Context**: see how historical strategy results are shown beside the current signal instead of being treated as a standalone answer.
+3. **Market Intelligence Overview**: see how broad research modules turn market evidence into decision briefs, watchlists, and setup snapshots.
+4. **Event Strategy Deep Dive**: see how a catalyst is converted into a testable strategy thesis with allowed filters, forbidden filters, validation protocol, and overfit controls.
+5. **Workflow Examples**: see how the private implementation maps research, monitoring, safeguards, and outcome tracking into a repeatable process.
+
 ## Product Overview
 
 LK Intelligence connects four core trading workflows:
@@ -30,6 +40,14 @@ The goal is to move from scattered market observations to a disciplined research
 - Engineering judgment: how the system handles data freshness, failed providers, invalid orders, permissions, and auditability.
 - Quantitative discipline: how backtests, signal scores, drawdowns, profit factor, setup outcomes, and allocation drift are shown as decision context rather than as guarantees.
 - Communication: how complex trading workflows are documented clearly without exposing private strategy code.
+
+## Questions The Project Explores
+
+- How should a market idea move from news, price action, or a model signal into a reviewable setup?
+- How do you stop a dashboard from becoming an overfitting machine?
+- What information should be visible before a rebalance or paper order is allowed?
+- How should AI-assisted research be constrained so it produces structured hypotheses instead of loose opinions?
+- How do you create enough traceability to review whether a trading idea actually worked?
 
 ## What This Demonstrates
 
