@@ -1,6 +1,6 @@
-# LK V1 Trade Desk
+# LK Intelligence / LK V1 Trade Desk
 
-Public showcase for **LK V1 Trade Desk**, a private trading research and paper-trading operations platform I built to turn market ideas into structured, testable, and reviewable trading decisions. The system connects signal validation, AI-assisted market research, portfolio allocation, paper execution review, and post-trade outcome tracking in one workflow.
+Public showcase for **LK Intelligence**, a private trading research and paper-trading operations platform I built to turn market ideas into structured, testable, and reviewable decisions. The system connects signal validation, AI-assisted market research, event-driven strategy research, portfolio allocation, paper execution review, and post-trade outcome tracking in one workflow.
 
 The production implementation remains private because it contains strategy logic, execution workflows, credentials, and account-specific data. This repository is intentionally sanitized for professional review: it highlights the product design, workflow architecture, screenshots, and risk controls without exposing proprietary code or private trading data.
 
@@ -8,19 +8,21 @@ The private implementation, architecture decisions, and selected code examples c
 
 ## Product Overview
 
-LK V1 Trade Desk connects three trading workflows:
+LK Intelligence connects four core trading workflows:
 
 - **Trade Desk**: validates market ideas against local LK V1 signal states, fundamentals, volume, backtest context, AI setup status, and risk checks.
-- **Market Intelligence**: discovers opportunities, runs ticker-level research, generates short/medium/long setup views, and tracks saved setup outcomes.
+- **Market Intelligence**: discovers opportunities, runs ticker-level research, generates short/medium/long setup views, builds decision briefs, and tracks saved setup outcomes.
+- **Event Strategy Lab**: converts macro, policy, commodity, earnings, weather, and corporate catalysts into repeatable strategy rules, validation plans, and saved monitors.
 - **Active Portfolio**: supports paper-trading strategy allocation, target weights, allocation-drift checks, Smart Rebalance, position/order monitoring, and execution logs.
 
 The goal is to move from scattered market observations to a disciplined research-to-review workflow: discover an idea, validate it against local signals and market context, size it in a portfolio view, and track what happened afterward.
 
 ## What This Demonstrates
 
-- Designed a multi-module trading dashboard covering idea discovery, signal validation, setup review, and paper-portfolio monitoring.
-- Built workflows for multi-timeframe signal tracking, market-data validation, factor-style scoring, and backtest context review.
-- Developed AI-assisted market research that converts broad market evidence into structured setup snapshots with outcome monitoring.
+- Designed a multi-module trading dashboard covering idea discovery, signal validation, event strategy research, setup review, and paper-portfolio monitoring.
+- Built workflows for multi-timeframe signal tracking, market-data validation, factor-style scoring, backtest context review, and daily research triage.
+- Developed AI-assisted market research that converts broad market evidence into structured setup snapshots, decision briefs, and outcome monitoring.
+- Added event-driven strategy research for catalyst scanning, rule definition, historical feasibility estimates, validation protocols, and saved trigger monitors.
 - Implemented paper-trading operations concepts including target allocation, allocation drift, Smart Rebalance review, position/order monitoring, and execution logs.
 - Added production-minded safeguards for stale signals, duplicate signals, invalid orders, provider failures, and manual review before execution.
 - Built the application with a private Next.js/TypeScript stack, API integrations, persistence, and dashboard state management.
@@ -30,7 +32,8 @@ The goal is to move from scattered market observations to a disciplined research
 - Frontend product workflow design in Next.js and TypeScript.
 - Market-data and signal-state normalization.
 - Multi-timeframe dashboard state and scoring.
-- AI-assisted research orchestration and structured setup storage.
+- AI-assisted research orchestration, structured setup storage, and research journal workflows.
+- Event-driven strategy research with trigger logic, validation plans, failure modes, and monitor definitions.
 - Paper-trading operations concepts: allocation drift, rebalance review, safeguards, and logs.
 - Documentation and public/private repo separation for protecting proprietary logic.
 
@@ -71,7 +74,10 @@ Market data, fundamentals, watchlist inputs
 Trade Desk local scoring and LK V1 state validation
         |
         v
-Market Intelligence discovery, ticker deep dives, and setup snapshots
+Market Intelligence discovery, ticker deep dives, decision briefs, and setup snapshots
+        |
+        v
+Event Strategy Lab catalyst scans, strategy rules, and monitor definitions
         |
         v
 Trade Desk review of AI ideas against local signal, score, volume, and risk evidence
@@ -86,9 +92,14 @@ Outcome monitoring for saved setups, portfolio snapshots, and execution review
 ## Key Design Principles
 
 - **Evidence-gated decisions**: AI-generated or external market ideas must be validated against local signal, score, volume, and risk evidence.
+- **Research before automation**: catalyst ideas, ticker setups, and rebalance proposals are converted into reviewable rules before they can influence execution.
 - **Paper trading first**: execution workflows are designed for paper trading and forward-testing before any live use.
-- **Traceability**: setup snapshots, execution logs, and outcome monitoring make it possible to review decisions after the fact.
+- **Traceability**: setup snapshots, research journals, execution logs, and outcome monitoring make it possible to review decisions after the fact.
 - **Safety over automation**: stale signals, duplicate signals, allocation breaches, invalid orders, and provider failures are treated as first-class risks.
+
+## Additional Research Lab
+
+The private system also includes an experimental **Sports Probability** workspace for odds-board scanning, implied probability, edge estimation, fractional-Kelly sizing, parlay review, and outcome journaling. It is treated as a probability and decision-quality lab rather than a core trading module in this showcase.
 
 ## Public Scope
 
@@ -109,12 +120,15 @@ This repository does **not** include:
 - Private portfolio state.
 - Private Supabase data.
 - Account-specific paper-trading records.
+- Private strategy monitors, research journals, and event-study implementation details.
 
 ## Documentation
 
 - [Architecture](docs/architecture.md)
 - [Workflow Examples](docs/workflows.md)
 - [Public Scope And Privacy](docs/public-scope.md)
+- [Sanitized Signal Review Example](snippets/signal-review-example.md)
+- [Sanitized Event Strategy Lab Example](snippets/event-strategy-lab-example.md)
 
 ## Disclaimer
 

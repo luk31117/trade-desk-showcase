@@ -12,6 +12,7 @@ The private implementation, architecture decisions, workflow design, and selecte
 - Workflow descriptions.
 - High-level safeguards and design decisions.
 - Public-facing explanation of product scope and system boundaries.
+- Sanitized descriptions of Event Strategy Lab and probability-lab concepts.
 
 ## Excluded
 
@@ -21,6 +22,7 @@ The private implementation, architecture decisions, workflow design, and selecte
 - Pine Script source.
 - Optimization scripts.
 - Trading execution implementation.
+- Event-study implementation details.
 - Private portfolio state.
 - Private database records.
 - User credentials or access-control configuration.

@@ -1,6 +1,6 @@
 # Architecture
 
-LK V1 Trade Desk is organized around three product layers: research discovery, local validation, and paper-trading operations.
+LK Intelligence is organized around four product layers: research discovery, event strategy research, local validation, and paper-trading operations.
 
 ## 1. Trade Desk
 
@@ -20,14 +20,30 @@ The central design idea is that external research is useful, but it should not o
 Market Intelligence is the opportunity-discovery layer. It supports:
 
 - Research modules such as institutional positioning, earnings volatility, sector leadership, macro policy watchlists, hidden gems, and market movers.
+- Market coverage filters across global and regional universes.
+- Risk profile and strategy-direction filters for conservative, balanced, aggressive, long-only, and long/short research modes.
 - Single-ticker deep dives.
+- Decision Brief and Trade Today / Watch Levels views for daily research triage.
 - Short-, medium-, and long-term setup generation.
 - Entry, stop loss, take profit, probability, expected ROI, and holding-period fields.
-- Setup history and realized-outcome tracking.
+- Setup journals, setup history, and realized-outcome tracking.
 
 The output is structured so research can be reviewed and compared over time.
 
-## 3. Active Portfolio
+## 3. Event Strategy Lab
+
+Event Strategy Lab converts market-moving catalysts into strategy research plans. It supports:
+
+- Macro, policy, weather, commodity, social, and corporate catalyst scanning.
+- Repeatable trigger definitions rather than one-off stock tips.
+- Affected sector and ticker mapping.
+- Preliminary 5Y/10Y feasibility estimates when available.
+- Entry and exit rules, failure modes, and validation protocols.
+- Saved monitors for event triggers that should be tested later.
+
+This layer is designed to turn discretionary event observations into testable trading hypotheses.
+
+## 4. Active Portfolio
 
 Active Portfolio is the paper-trading operations layer. It supports:
 
@@ -52,6 +68,9 @@ Trade Desk scoring and LK V1 state checks
 Market Intelligence research modules and setup snapshots
         |
         v
+Event Strategy Lab catalyst research and strategy monitors
+        |
+        v
 Trade Desk local validation
         |
         v
@@ -69,5 +88,7 @@ The private implementation includes controls around:
 - Invalid order handling.
 - Provider failures and fallbacks.
 - Paper-trading enforcement during testing.
+- Outcome tracking for saved setups.
+- Manual review before execution-sensitive actions.
 
 Only a sanitized overview is included in this public showcase.

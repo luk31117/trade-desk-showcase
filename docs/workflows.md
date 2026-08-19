@@ -14,11 +14,21 @@ These examples describe the system behavior without exposing private implementat
 ## Market Intelligence Setup Flow
 
 1. Run one or more research modules.
-2. Generate ticker candidates with evidence and limitations.
-3. Build short-, medium-, and long-term setup views.
-4. Store each setup as a structured snapshot.
-5. Re-check saved setups against later market data.
-6. Mark outcomes as waiting, open, won, lost, expired, or invalidated.
+2. Select market coverage, risk profile, and strategy direction.
+3. Generate ticker candidates with evidence and limitations.
+4. Build a Decision Brief and Trade Today / Watch Levels shortlist.
+5. Build short-, medium-, and long-term setup views for selected names.
+6. Store selected setups into research journals as structured snapshots.
+7. Re-check saved setups against later market data.
+8. Mark outcomes as waiting, open, won, lost, expired, or invalidated.
+
+## Event Strategy Lab Flow
+
+1. Scan for repeatable event-driven strategy candidates.
+2. Convert catalysts into trigger rules, impacted sectors, and ticker baskets.
+3. Draft entry rules, exit rules, failure modes, and monitoring logic.
+4. Label preliminary historical feasibility and overfit risk.
+5. Save promising ideas as monitors for later validation in Trade Desk or a real backtest engine.
 
 ## Active Portfolio Review
 
@@ -37,3 +47,4 @@ These examples describe the system behavior without exposing private implementat
 - Block invalid orders.
 - Use provider fallback handling and failure logs.
 - Keep paper-trading mode during testing.
+- Use conservative handling when an outcome sequence is ambiguous.
