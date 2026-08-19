@@ -49,12 +49,6 @@ Detailed strategy view showing thesis, trigger logic, preliminary feasibility, a
 
 ![Event Strategy Lab Deep Dive](docs/screenshots/event-strategy-lab-deep-dive.png)
 
-### Sports Probability Lab
-
-Experimental probability workspace for odds, implied probability, modeled probability, edge, watch levels, and outcome review. It is included as a decision-quality lab rather than a core trading module.
-
-![Sports Probability Watchlist](docs/screenshots/sports-probability-watchlist.png)
-
 ## What Makes It Interesting
 
 - **Research is forced into structure**: ideas are stored with evidence, setup type, entry/stop/target logic, holding period, status, and later outcome.
