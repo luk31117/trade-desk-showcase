@@ -30,6 +30,14 @@ These examples describe the system behavior without exposing private implementat
 4. Label preliminary historical feasibility and overfit risk.
 5. Save promising ideas as monitors for later validation in Trade Desk or a real backtest engine.
 
+## Backtest Context Review
+
+1. Run staged LK V1 configuration sweeps across selected tickers and timeframes.
+2. Store simulated trade count, win rate, ROI, maximum drawdown, profit factor, and score.
+3. Show the result beside the current signal state so backtest context does not override live setup quality.
+4. Prefer rows with enough trade count and controlled drawdown over eye-catching low-sample results.
+5. Treat all results as research context until forward-tested.
+
 ## Active Portfolio Review
 
 1. Define a strategy allocation.

@@ -43,6 +43,28 @@ Event Strategy Lab converts market-moving catalysts into strategy research plans
 
 This layer is designed to turn discretionary event observations into testable trading hypotheses.
 
+### Event Strategy Research Thesis
+
+The design thesis is that event ideas should not start as ticker calls. They should start as repeatable conditions:
+
+- What observable event triggered the idea?
+- Which sectors, ETFs, or liquid tickers should be affected?
+- What is the expected direction and holding period?
+- What data is required for a real event study?
+- What filters are economically justified, and which filters would be overfit?
+
+The private implementation uses structured AI outputs to force each idea into trigger, basket, entry, exit, validation, failure-mode, and monitor fields before it is saved.
+
+### Prompt Design Principles
+
+The Event Strategy Lab prompt is built around a few constraints:
+
+- Generate strategy ideas, not single-stock tips.
+- Prefer repeatable catalysts such as CPI surprises, Fed language, tariffs, weather shocks, oil inventory shocks, cyber incidents, regulatory changes, and earnings guidance revisions.
+- Label preliminary metrics conservatively when audited backtest evidence is not available.
+- Define allowed filters, forbidden filters, validation protocol, robustness checks, and overfit risk.
+- Require validation in Trade Desk or a real backtest engine before automation.
+
 ## 4. Active Portfolio
 
 Active Portfolio is the paper-trading operations layer. It supports:

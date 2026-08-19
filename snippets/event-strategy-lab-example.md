@@ -16,6 +16,14 @@ Scan:
   4. Estimate whether the idea has enough historical observations to test.
   5. Flag overfit risk before optimization.
 
+Prompt thesis:
+  Generate strategy ideas, not single-name stock tips.
+  Prefer observable triggers that can be monitored later.
+  Keep preliminary performance estimates conservative.
+  Require economically justified filters.
+  Separate allowed filters from forbidden overfit filters.
+  Require validation before automation.
+
 Deep Dive:
   trigger
   impacted basket

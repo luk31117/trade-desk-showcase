@@ -49,6 +49,10 @@ Architecture decisions, workflow design, and selected implementation details can
 
 ![Trade Desk Overview](docs/screenshots/trade-desk-overview.png)
 
+### GOOGL Backtest Context
+
+![GOOGL Backtest Context](docs/screenshots/googl-backtest-context.png)
+
 ### Trade Desk Backtest Context
 
 ![Trade Desk Backtest Context](docs/screenshots/trade-desk-backtest-tooltip.png)
@@ -64,6 +68,18 @@ Architecture decisions, workflow design, and selected implementation details can
 ### Market Movers Scan
 
 ![Market Movers Scan](docs/screenshots/market-movers.png)
+
+### Event Strategy Lab
+
+![Event Strategy Lab Overview](docs/screenshots/event-strategy-lab-overview.png)
+
+### Event Strategy Deep Dive
+
+![Event Strategy Lab Deep Dive](docs/screenshots/event-strategy-lab-deep-dive.png)
+
+### Sports Probability Lab
+
+![Sports Probability Watchlist](docs/screenshots/sports-probability-watchlist.png)
 
 ## System Flow
 
@@ -97,9 +113,15 @@ Outcome monitoring for saved setups, portfolio snapshots, and execution review
 - **Traceability**: setup snapshots, research journals, execution logs, and outcome monitoring make it possible to review decisions after the fact.
 - **Safety over automation**: stale signals, duplicate signals, allocation breaches, invalid orders, and provider failures are treated as first-class risks.
 
+## Research Examples
+
+- **GOOGL staged strategy sweep**: one representative GOOGL 2D long-only LK V1 configuration produced 70 simulated trades, 57.1% win rate, 2.99 profit factor, 509.9% ROI, and 20.9% maximum drawdown after 0.1% commission assumptions. This is shown as research/backtest context, not a live performance claim.
+- **Event Strategy Lab**: current-catalyst scans are converted into repeatable event rules, sector/ticker baskets, entry and exit logic, failure modes, validation protocols, and saved strategy monitors.
+- **Trade Tracker**: saved setups are monitored for entry activation, take-profit, stop-loss, expiry, realized return, and ambiguous outcome handling.
+
 ## Additional Research Lab
 
-The private system also includes an experimental **Sports Probability** workspace for odds-board scanning, implied probability, edge estimation, fractional-Kelly sizing, parlay review, and outcome journaling. It is treated as a probability and decision-quality lab rather than a core trading module in this showcase.
+The private system also includes an experimental **Sports Probability** workspace for odds-board scanning, implied probability, edge estimation, fractional-Kelly sizing, parlay review, and outcome journaling. It is treated as a probability and decision-quality lab rather than a core trading module.
 
 ## Public Scope
 
