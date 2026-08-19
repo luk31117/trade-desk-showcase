@@ -1,6 +1,6 @@
 # Architecture
 
-LK Intelligence is organized around four product layers: research discovery, event strategy research, local validation, and paper-trading operations.
+LK Intelligence is organized around four product layers: local validation, research discovery, event strategy research, and paper-trading operations.
 
 ## Design Thesis
 
@@ -34,6 +34,15 @@ Market Intelligence is the opportunity-discovery layer. It supports:
 
 The output is structured so research can be reviewed and compared over time.
 
+### Trade Desk Connection
+
+Market Intelligence and Trade Desk are connected in two directions:
+
+- Trade Desk can run ticker-level Market Intelligence deep dives with local LK V1 state, score quality, backtest context, relative volume, and signal reasons passed in as first-class evidence.
+- Market Intelligence can send selected names back to Trade Desk through "Review in Trade Desk" links for local signal and execution-readiness validation.
+
+This connection is intentionally evidence-based. Market Intelligence can discover or explain a setup, but Trade Desk remains the local validation layer before portfolio or paper-execution review.
+
 ## 3. Event Strategy Lab
 
 Event Strategy Lab converts market-moving catalysts into strategy research plans. It supports:
@@ -46,6 +55,8 @@ Event Strategy Lab converts market-moving catalysts into strategy research plans
 - Saved monitors for event triggers that should be tested later.
 
 This layer is designed to turn discretionary event observations into testable trading hypotheses.
+
+Event Strategy Lab is a parallel research module rather than a direct input into Market Intelligence. Saved monitors are intended for later validation in Trade Desk or a dedicated backtest engine before any automation.
 
 ### Event Strategy Research Thesis
 
@@ -89,15 +100,16 @@ Market Data / Fundamentals / Watchlist
         |
         v
 Trade Desk scoring and LK V1 state checks
+        |\
+        | \--> Market Intelligence research modules and setup snapshots
+        |      ^       |
+        |      |       v
+        |      +-- optional Trade Desk context and Trade Desk review links
+        |
+        +----> Event Strategy Lab catalyst research and strategy monitors
         |
         v
-Market Intelligence research modules and setup snapshots
-        |
-        v
-Event Strategy Lab catalyst research and strategy monitors
-        |
-        v
-Trade Desk local validation
+Trade Desk local validation of qualified ideas
         |
         v
 Active Portfolio review, rebalance, and paper execution logs

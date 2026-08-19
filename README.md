@@ -24,11 +24,11 @@ For a fast review, start here:
 
 ## Product Overview
 
-LK Intelligence connects four core trading workflows:
+LK Intelligence connects four related trading workflows:
 
 - **Trade Desk**: validates market ideas against local LK V1 signal states, fundamentals, volume, backtest context, AI setup status, and risk checks.
-- **Market Intelligence**: discovers opportunities, runs ticker-level research, generates short/medium/long setup views, builds decision briefs, and tracks saved setup outcomes.
-- **Event Strategy Lab**: converts macro, policy, commodity, earnings, weather, and corporate catalysts into repeatable strategy rules, validation plans, and saved monitors.
+- **Market Intelligence**: discovers opportunities, runs ticker-level research, generates short/medium/long setup views, builds decision briefs, tracks saved setup outcomes, and can route qualified ideas into Trade Desk review.
+- **Event Strategy Lab**: separately converts macro, policy, commodity, earnings, weather, and corporate catalysts into repeatable strategy rules, validation plans, and saved monitors.
 - **Active Portfolio**: supports paper-trading strategy allocation, target weights, allocation-drift checks, Smart Rebalance, position/order monitoring, and execution logs.
 
 The goal is to move from scattered market observations to a disciplined research-to-review workflow: discover an idea, validate it against local signals and market context, size it in a portfolio view, and track what happened afterward.
@@ -147,15 +147,16 @@ Market data, fundamentals, watchlist inputs
         |
         v
 Trade Desk local scoring and LK V1 state validation
+        |\
+        | \--> Market Intelligence discovery, ticker deep dives, decision briefs, and setup snapshots
+        |      ^       |
+        |      |       v
+        |      +-- optional Trade Desk context and "Review in Trade Desk" links
+        |
+        +----> Event Strategy Lab catalyst scans, event rules, validation plans, and saved monitors
         |
         v
-Market Intelligence discovery, ticker deep dives, decision briefs, and setup snapshots
-        |
-        v
-Event Strategy Lab catalyst scans, strategy rules, and monitor definitions
-        |
-        v
-Trade Desk review of AI ideas against local signal, score, volume, and risk evidence
+Trade Desk review of qualified ideas against local signal, score, volume, and risk evidence
         |
         v
 Active Portfolio allocation, Smart Rebalance, and paper execution logs

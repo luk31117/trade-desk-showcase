@@ -11,6 +11,14 @@ These examples describe the system behavior without exposing private implementat
 5. Compare Market Intelligence setup status with local Trade Desk evidence.
 6. Send qualified names to Suggested Focus or portfolio review.
 
+## Trade Desk And Market Intelligence Bridge
+
+1. Trade Desk can launch a ticker-level Market Intelligence deep dive in Trade Desk mode.
+2. The request includes local context such as LK V1 state, timeframe stack, scores, relative volume, backtest metrics, and local signal reasons.
+3. Market Intelligence uses that local context as an execution-validation lens rather than treating external research as a standalone signal.
+4. Market Intelligence results can link selected names back into Trade Desk for local signal and risk review.
+5. Active Portfolio rebalance review can optionally refresh Market Intelligence evidence before approving, reducing, or rejecting paper rebalance actions.
+
 ## Market Intelligence Setup Flow
 
 1. Run one or more research modules.
@@ -28,7 +36,7 @@ These examples describe the system behavior without exposing private implementat
 2. Convert catalysts into trigger rules, impacted sectors, and ticker baskets.
 3. Draft entry rules, exit rules, failure modes, and monitoring logic.
 4. Label preliminary historical feasibility and overfit risk.
-5. Save promising ideas as monitors for later validation in Trade Desk or a real backtest engine.
+5. Save promising ideas as local monitors for later validation in Trade Desk or a real backtest engine.
 
 ## Backtest Context Review
 
